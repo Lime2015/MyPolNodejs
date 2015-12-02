@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<general_meeting_vote>
+	<assemblymen>
+		<assemblyman>
+			<assemblyman_id>10</assemblyman_id>
+			<votes>
+				<vote>
+					<bill_name><![CDATA[6·25 전사자유해의 발굴 등에 관한 법률 일부개정법률안]]></bill_name>
+					<bill_no><![CDATA[1913441]]></bill_no>
+					<vote_dttm>2015-03-03</vote_dttm>
+					<mod_dttm>2015-03-12 11:38:49</mod_dttm>
+					<bill_target_url><![CDATA[http://watch.peoplepower21.org/New/c_monitor_voteresult_detail.php?mbill=9006]]></bill_target_url>
+					<result><![CDATA[원안가결]]></result>
+					<assemblyman_vote><![CDATA[불참]]></assemblyman_vote>
+					</vote>
+				<vote>
+					<bill_name><![CDATA[가족친화 사회환경의 조성 촉진에 관한 법률 일부개정법률안(대안)]]></bill_name>
+					<bill_no><![CDATA[1914121]]></bill_no>
+					<vote_dttm>2015-03-03</vote_dttm>
+					<mod_dttm>2015-03-12 11:39:04</mod_dttm>
+					<bill_target_url><![CDATA[http://watch.peoplepower21.org/New/c_monitor_voteresult_detail.php?mbill=8977]]></bill_target_url>
+					<result><![CDATA[원안가결]]></result>
+					<assemblyman_vote><![CDATA[찬성]]></assemblyman_vote>
+					</vote>
+			</votes>
+		</assemblyman>
+		<assemblyman>
+			<assemblyman_id>33</assemblyman_id>
+			<votes>
+				<vote>
+					<bill_name><![CDATA[고도 보존 및 육성에 관한 특별법 일부개정법률안(대안)]]></bill_name>
+					<bill_no><![CDATA[1914123]]></bill_no>
+					<vote_dttm>2015-03-03</vote_dttm>
+					<mod_dttm>2015-03-12 11:39:18</mod_dttm>
+					<bill_target_url><![CDATA[http://watch.peoplepower21.org/New/c_monitor_voteresult_detail.php?mbill=9013]]></bill_target_url>
+					<result><![CDATA[원안가결]]></result>
+					<assemblyman_vote><![CDATA[불참]]></assemblyman_vote>
+					</vote>
+				<vote>
+					<bill_name><![CDATA[산업재해보상보험법 일부개정법률안(대안) ]]></bill_name>
+					<bill_no><![CDATA[1913273]]></bill_no>
+					<vote_dttm>2014-12-29</vote_dttm>
+					<mod_dttm>2015-01-22 10:52:31</mod_dttm>
+					<bill_target_url><![CDATA[http://watch.peoplepower21.org/New/c_monitor_voteresult_detail.php?mbill=8843]]></bill_target_url>
+					<result><![CDATA[원안가결]]></result>
+					<assemblyman_vote><![CDATA[찬성]]></assemblyman_vote>
+					</vote>
+			</votes>
+		</assemblyman>
+	</assemblymen>
+</general_meeting_vote>
+	
