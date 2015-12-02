@@ -24,12 +24,15 @@ testObject.save({foo:"bar"}).then(function(object) {
 
 var fs = require('fs');
 var filePath = './files/assemblymen.xml';
+var filePath2 = './files/bill.xml';
+var filePath3 = './files/vote.xml';
 
 var xml2js = require('xml2js');
 var parser = new xml2js.Parser();
 
 //var jsonObj = [];
 //jsonObj = null;
+
 var data = fs.readFileSync(filePath, 'utf8', function(err, data) {
 	if(err) throw err;
 	console.log('data: '+ data);
@@ -49,49 +52,97 @@ function xml2jsParser() {
 			var menObj = jsonObj[i];
 			assemblymen.set(menObj);
 			assemblymen.save();
-			console.log('jsonDoc: '+ menObj.assembly_id);
+			console.log('jsonDoc: '+ menObj.assemblyman_id);
 			console.log('jsonDoc saved');
 		}
 	})
 }
-xml2jsParser();
-/*
-function assemblySave(){
+//xml2jsParser();
 
-	if(jsonObj != null){
+//==========================================================================
+
+var data2 = fs.readFileSync(filePath2, 'utf8', function(err, data) {
+	if(err) throw err;
+	console.log('data: '+ data2);
+	});
+
+function xml2jsParser2() {
+		parser.parseString(data2, function (err, arrObj) {	
+		if(err) throw err;
+		console.log('arrObj: '+ arrObj);
+		console.log()
+		console.log('arrObj: '+ arrObj.bill_info.assemblymen[0].assemblyman[0].assemblyman_id);
+		var jsonObj = arrObj.bill_info.assemblymen[0].assemblyman;
+//		console.log('jsonObj: ' + jsonObj);
+		
 		for(var i=0; i< jsonObj.length; i++){
-			var Assemblymen = Parse.Object.extend("Assemblymen");
+			var Assemblymen = Parse.Object.extend("Bill");
 			var assemblymen = new Assemblymen();
 			var menObj = jsonObj[i];
 			assemblymen.set(menObj);
 			assemblymen.save();
-//			console.log('jsonDoc: '+ menObj);
+			console.log('jsonDoc: '+ menObj.assemblyman_id);
 			console.log('jsonDoc saved');
 		}
-	} else {
-		console.log('fail!');
-	}
+	})
 }
-*/
-/*
-xml2jsParser(function(){
-	assemblySave();
-});
-*/
-		
-/*
-if(arrObj != null){
-	for(var i=0; i< arrObj.length; i++){
-		var Assemblymen = Parse.Object.extend("Assemblymen");
-		var assemblymen = new Assemblymen();
-		var menObj = arrObj[i];
-		assemblymen.set(menObj);
-		assemblymen.save();
-		console.log('jsonDoc: '+ menObj);
-		console.log('jsonDoc saved');
-	}}else{ throw err}
+//xml2jsParser2();
 
+//==================================================================================
+
+
+fs.readFile(filePath3, 'utf8', function(err, data) {
+	parser.parseString(data, function (err, arrObj) {
+		console.log('arrObj: '+ arrObj);
+		
+		console.log('arrObj: '+ arrObj.general_meeting_vote.assemblymen[0].assemblyman[0].assemblyman_id);
+		var jsonObj = arrObj.general_meeting_vote.assemblymen[0].assemblyman;
+		
+		if(jsonObj != null){
+			for(var i=0; i< jsonObj.length; i++){
+				var Assemblymen = Parse.Object.extend("Vote");
+				var assemblymen = new Assemblymen();
+				var menObj = jsonObj[i];
+				assemblymen.set(menObj);
+				assemblymen.save();
+				console.log('jsonDoc: '+ menObj);
+				console.log('jsonDoc saved');
+			}
+		}else{ throw err}
+	})
+});
+
+/*
+var data3 = fs.readFileSync(filePath3, 'utf8', function(err, data) {
+	if(err) throw err;
+//	console.log('data: '+ data3);
+	});
+
+function xml2jsParser2() {
+		parser.parseString(data3, function (err, arrObj) {	
+		if(err) throw err;
+		console.log('arrObj: '+ arrObj);
+		console.log('arrObj: '+ arrObj.general_meeting_vote.assemblymen[0].assemblyman[0].assemblyman_id);
+		var jsonObj = arrObj.bill_info.assemblymen[0].assemblyman;
+//		console.log('jsonObj: ' + jsonObj);
+		
+		for(var i=0; i< jsonObj.length; i++){
+			var Assemblymen = Parse.Object.extend("Vote");
+			var assemblymen = new Assemblymen();
+			var menObj = jsonObj[i];
+			assemblymen.set(menObj);
+			assemblymen.save();
+			console.log('jsonDoc: '+ menObj.assemblyman_id);
+			console.log('jsonDoc saved');
+		}
+	})
+}
+xml2jsParser3();
 */
+//=============================================================================
+
+
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
